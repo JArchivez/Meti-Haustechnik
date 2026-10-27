@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meti Haustechnik GmbH – Sanitär in Zürich</title>
+<meta name="description" content="Meti Haustechnik GmbH – Sanitärinstallationen, Reparaturen und Badsanierung in Zürich. Seebacherstrasse 102, 8052 Zürich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0b2545;--blue:#1565c0;--sky:#e8f1fb;--text:#14213d;--muted:#5b6475;--line:#dde3ec;--bg:#ffffff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Manrope,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.15;font-weight:800;letter-spacing:-.02em}
+  [hidden]{display:none!important}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;white-space:nowrap}
+  .logo svg{flex:none}
+  .logo small{display:block;font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .links{display:flex;gap:28px;font-size:15px;font-weight:500}
+  .links a{text-decoration:none;color:var(--muted)}
+  .links a:hover{color:var(--blue)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:8px;font-size:15px;white-space:nowrap;transition:background .2s}
+  .btn:hover{background:#0d47a1}
+  .btn.light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .btn.light:hover{border-color:var(--blue);color:var(--blue)}
+  nav .btn{padding:10px 16px;font-size:14px}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#13315c 60%,#1b4d89 100%);color:#fff;padding:96px 0 110px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;
+     background:radial-gradient(circle,rgba(255,255,255,.10),transparent 65%)}
+  .hero .wrap{position:relative;z-index:1}
+  .tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500}
+  .hero h1{font-size:clamp(38px,6.5vw,64px);margin:22px 0 18px;max-width:720px}
+  .hero p{font-size:18px;opacity:.85;max-width:560px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .hero .btn.light{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .hero .btn.light:hover{border-color:#fff}
+
+  .usp{margin-top:-50px;position:relative;z-index:2}
+  .usp .grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(11,37,69,.10)}
+  .usp .grid div{padding:26px 28px;border-right:1px solid var(--line)}
+  .usp .grid div:last-child{border-right:0}
+  .usp b{display:block;font-size:17px}
+  .usp span{color:var(--muted);font-size:14px}
+
+  section{padding:90px 0}
+  .head{max-width:600px;margin-bottom:44px}
+  .head .k{color:var(--blue);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .head h2{font-size:clamp(30px,4.5vw,42px);margin-top:8px}
+  .head p{color:var(--muted);margin-top:12px;font-size:17px}
+
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{border:1px solid var(--line);border-radius:14px;padding:30px;transition:border-color .2s,transform .2s}
+  .svc:hover{border-color:var(--blue);transform:translateY(-3px)}
+  .ico{width:48px;height:48px;border-radius:12px;background:var(--sky);display:grid;place-items:center;margin-bottom:18px}
+  .svc h3{font-size:19px}
+  .svc p{color:var(--muted);font-size:15px;margin-top:8px}
+
+  .steps{background:var(--sky)}
+  .steplist{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+  .step{counter-increment:s}
+  .step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:16px}
+  .step h3{font-size:19px}
+  .step p{color:var(--muted);margin-top:6px}
+
+  .contact{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:stretch}
+  .box{background:var(--navy);color:#fff;border-radius:16px;padding:40px}
+  .box h2{font-size:32px}
+  .box p{opacity:.8;margin-top:10px}
+  .box dl{margin-top:28px}
+  .box dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:20px}
+  .box dd{font-size:18px;font-weight:700;margin-top:4px}
+  .box dd a{text-decoration:none}
+  .box .btn{margin-top:30px;background:#fff;color:var(--navy)}
+  .map{border-radius:16px;overflow:hidden;border:1px solid var(--line);min-height:380px}
+  .map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:14px}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{text-decoration:none}
+  #legal{margin-top:20px;font-size:13px}
+  #legal p+p{margin-top:12px}
+
+  .callbar{display:none}
+  @media (max-width:820px){
+    .links{display:none}
+    .usp .grid,.services,.steplist,.contact{grid-template-columns:1fr}
+    .usp .grid div{border-right:0;border-bottom:1px solid var(--line)}
+    .usp .grid div:last-child{border-bottom:0}
+    section{padding:64px 0}
+    .logo small{display:none}
+    .callbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+    .callbar a{flex:1;text-align:center;padding:16px;font-weight:700;text-decoration:none;background:var(--blue);color:#fff}
+    .callbar a.alt{background:#fff;color:var(--navy)}
+    footer{padding-bottom:90px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#1565c0"/><path d="M18 8c-4 5.5-7 9.4-7 13a7 7 0 0 0 14 0c0-3.6-3-7.5-7-13z" fill="#fff"/></svg>
+      <span>Meti Haustechnik<small>SANITÄR · ZÜRICH</small></span>
+    </a>
+    <div class="links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <a class="btn" href="tel:+41793550515">079 355 05 15</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Sanitärinstallationen in Zürich und Umgebung</span>
+    <h1>Ihr Sanitär-Fachbetrieb in Zürich-Seebach.</h1>
+    <p>Von der tropfenden Armatur bis zum neuen Badezimmer: Meti Haustechnik plant, installiert und repariert. Sauber, zuverlässig und zu fairen Preisen.</p>
+    <div class="cta">
+      <a class="btn" href="tel:+41793550515">📞 Jetzt anrufen</a>
+      <a class="btn light" href="#kontakt">Offerte anfragen</a>
+    </div>
+  </div>
+</header>
+
+<div class="usp">
+  <div class="wrap">
+    <div class="grid">
+      <div><b>Lokal in Zürich</b><span>Kurze Wege in der Stadt und Region</span></div>
+      <div><b>Kostenlose Offerte</b><span>Transparente Preise, keine Überraschungen</span></div>
+      <div><b>Saubere Arbeit</b><span>Wir hinterlassen alles so, wie wir es vorgefunden haben</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">Leistungen</div>
+      <h2>Alles rund um Wasser im Haus</h2>
+      <p>Für Privatkunden, Verwaltungen und Gewerbe.</p>
+    </div>
+    <!-- Leistungen vor dem Livegang mit dem Inhaber abgleichen -->
+    <div class="services">
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Reparaturen</h3><p>Undichte Leitungen, tropfende Wasserhähne, defekte Spülkästen. Schnell behoben.</p></div>
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0"/></svg></div><h3>Badsanierung</h3><p>Planung und Umsetzung Ihres neuen Badezimmers, vom Rohbau bis zur Armatur.</p></div>
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><path d="M3 7h6v4h6V7h6"/><path d="M3 17h18"/></svg></div><h3>Neuinstallationen</h3><p>Sanitärinstallationen für Neubau und Umbau, fachgerecht und normgerecht.</p></div>
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><h3>Boiler &amp; Warmwasser</h3><p>Ersatz, Entkalkung und Service von Boilern und Warmwasseranlagen.</p></div>
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><path d="M5 21h14"/></svg></div><h3>Abfluss &amp; Leitungen</h3><p>Verstopfte Abflüsse und Leitungsersatz, damit alles wieder läuft.</p></div>
+      <div class="svc"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Wartung</h3><p>Regelmässiger Unterhalt für Liegenschaften und Verwaltungen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf" class="steps">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">So einfach geht's</div>
+      <h2>In drei Schritten zur Lösung</h2>
+    </div>
+    <div class="steplist">
+      <div class="step"><h3>Anrufen oder schreiben</h3><p>Schildern Sie kurz Ihr Anliegen, gerne auch mit Foto.</p></div>
+      <div class="step"><h3>Besichtigung &amp; Offerte</h3><p>Wir schauen es uns an und erstellen eine klare, verbindliche Offerte.</p></div>
+      <div class="step"><h3>Ausführung</h3><p>Termingerecht und sauber erledigt, mit Garantie auf unsere Arbeit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact">
+    <div class="box">
+      <h2>Kontakt</h2>
+      <p>Wir melden uns schnellstmöglich bei Ihnen.</p>
+      <dl>
+        <dt>Telefon</dt><dd><a href="tel:+41793550515">079 355 05 15</a></dd>
+        <dt>Adresse</dt><dd>Seebacherstrasse 102<br>8052 Zürich</dd>
+        <dt>Erreichbarkeit</dt><dd>Mo–Fr, Termine nach Vereinbarung</dd>
+      </dl>
+      <a class="btn" href="tel:+41793550515">📞 Jetzt anrufen</a>
+    </div>
+    <div class="map">
+      <iframe loading="lazy" title="Karte Meti Haustechnik" src="https://maps.google.com/maps?q=Seebacherstrasse%20102%2C%208052%20Z%C3%BCrich&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span>© <span id="y"></span> Meti Haustechnik GmbH · Seebacherstrasse 102, 8052 Zürich</span>
+      <a href="#" onclick="var l=document.getElementById('legal');l.hidden=!l.hidden;return false">Impressum &amp; Datenschutz</a>
+    </div>
+    <div id="legal" hidden>
+      <!-- Vor dem Livegang ausfüllen -->
+      <p><strong>Impressum</strong><br>Meti Haustechnik GmbH<br>Seebacherstrasse 102, 8052 Zürich<br>Telefon: 079 355 05 15<br>Vertretungsberechtigte Person: [Name]<br>UID: [CHE-xxx.xxx.xxx]</p>
+      <p><strong>Datenschutz</strong><br>Diese Website verwendet keine Cookies und speichert keine Personendaten. Die eingebettete Karte wird von Google bereitgestellt; dabei gelten die Datenschutzbestimmungen von Google.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+41793550515">📞 Anrufen</a>
+  <a class="alt" href="#kontakt">Kontakt</a>
+</div>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
